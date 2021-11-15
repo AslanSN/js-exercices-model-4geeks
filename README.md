@@ -37,6 +37,8 @@ Por tanto si el resto de la división es 0, la letra del DNI es la T y si el res
 En primer lugar se debe comprobar si el número es menor que 0 o mayor que 99999999. Si ese es el caso, se muestra un mensaje al usuario indicando que el número proporcionado no es válido y el programa no muestra más mensajes.
 Si el número es válido, se calcula la letra que le corresponde según el método explicado anteriormente. Una vez calculada la letra, se debe comparar con la letra indicada por el usuario. Si no coinciden, se muestra un mensaje al usuario diciéndole que la letra que ha indicado no es correcta. En otro caso, se muestra un mensaje indicando que el número y la letra de DNI son correctos.
 
+Con funciones de alto nivel.
+
 ### ¿Cómo entregar el proyecto?
 
 1. Finaliza todos los ejercicios propuestos y asegurate de que están comentados :) 
