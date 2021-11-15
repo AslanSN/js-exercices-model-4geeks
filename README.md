@@ -3,7 +3,7 @@
 
 ### How to build the project
 
-1. Situate en el directorio del proyecto.
+1. Go to the workspace of the project.
 2. Execute `node index.js`
 3. Then you will see the results at the Terminal display.
 
