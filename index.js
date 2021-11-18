@@ -33,48 +33,48 @@ function ifInCleanData(value)
 
 
 //sorts the array sequence by modifying it from smallest to largest
-function bubbleSortSmallLarge(arr) 
+const bubbleSort  = (arr, ifFunction)  =>
 {
-
-    for (let i in arr)
+  for (let i in arr)
     {
-        for (let j = 0; j < i; j++)
+      for (let j = 0; j < i; j++)
         {
-            if (arr[i] < arr[j])
-            {
-                let temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
+          ifFunction(arr, i, j);
         }
     }
 
-    return arr
+    return arr;
 }
-console.log(bubbleSortSmallLarge(cleanData(sequence, ifInCleanData)));
+
+const ifSmallLargeInBubbleSort = (arr, i, j) => 
+{
+  if (arr[i] < arr[j]) 
+  {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+}
+console.log(`||Exercise 1|| 
+  - Array sorted by small to large: ${bubbleSort(cleanData(sequence, ifInCleanData), ifSmallLargeInBubbleSort)}`)
 
 
 // --* EXERCISE 2 => Create a function that sorts the array sequence from highest to lowest. *-- \\
 
 
-//sorts the array sequence by modifying it from largest to smallest
-function bubbleSortLargeSmall(arr) 
+//if in bubbleSort for sorting from large to small
+const ifLargeSmallInBubbleSort = (arr, i, j) =>
 {
-    for (let i in arr)
-    {
-        for (let j = 0; j < i; j++)
-        {
-            if (arr[i] > arr[j])
-            {
-                let temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-    return arr
+  if (arr[i] > arr[j])
+  {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
 }
-console.log(bubbleSortLargeSmall(cleanData(sequence, ifInCleanData)));
+
+console.log(`||Exercise 2||
+  - Array sorted by large to small: ${bubbleSort(cleanData(sequence, ifInCleanData), ifLargeSmallInBubbleSort)}`)
 
 
 // --* EXERCISE 3 => Create a function that calculates the arithmetic mean of the data in the Sequence array. *-- \\
@@ -110,7 +110,8 @@ function arithmeticMean(arrF)
     return mean;
 }
 
-console.log(arithmeticMean(cleanZeros()));
+console.log(`||Exercise 3||
+  - The Arithmetical mean is => ${arithmeticMean(cleanZeros())}`);
 
 
 // --* EXERCISE 4 => Calculate the letter of the National Identity Document (DNI) *-- \\
@@ -120,7 +121,11 @@ let dniCorrect = '55555555K';
 let tooBigDNINumber = '100000000B';
 let tooSmallDNINumber = '-10J'
 
-
+console.log(`||Exercise 4|| 
+1. Wrong letter: ${dniWrongLetter}
+2. All correct: ${dniCorrect}
+3. Too big number: ${tooBigDNINumber}
+4. Too small number: ${tooSmallDNINumber}`) 
 
 /**
  * !Converter
